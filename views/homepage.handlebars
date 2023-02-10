@@ -29,3 +29,32 @@
     <h3><a href="mailto:test@gmail.com">test@gmail.com</a></h3>
   </div>
 </div>
+
+<p>My name is {{nameValue}}. My email is {{emailLogin}}.</p>
+<div id=‘mainDiv’>
+  <div id=‘formDiv’>
+    <form id=‘demoForm’>
+      <fieldset>
+        <legend>Register here</legend>
+        <table id=‘regDetails’>
+          <tr>
+            <td><label for=‘nameInput’>Name</label></td>
+            <td><input type=‘text’ id=‘nameInput’/></td>
+          </tr>
+          <tr>
+            <td><label for=‘emailInput’>Email</label></td>
+            <td><input type=‘text’ id=‘emailInput’/></td>
+          </tr>
+          <tr>
+            <td><label for=‘passwordInput’>Password</label></td>
+            <td><input type=‘password’ id=‘passwordInput’/></td>
+          </tr>
+          <tr>
+            <td colspan=‘2’><input type=‘submit’ id=‘submitButton’/></td>
+          </tr>
+        </table>
+      </fieldset>
+    </from>
+  </div>
+  <div id=‘detailsBox’></div>
+</div>
