@@ -1,54 +1,10 @@
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <!-- Call the helper function with triple brackets to render the span as HTML -->
-    <h2>{{{get_emoji}}} Test User</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:test@gmail.com">test@gmail.com</a></h3>
-  </div>
-</div>
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{{get_emoji}}} Test User</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:test@gmail.com">test@gmail.com</a></h3>
-  </div>
-</div>
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{{get_emoji}}} Test User</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:test@gmail.com">test@gmail.com</a></h3>
-  </div>
-</div>
-
-<p>My name is {{nameValue}}. My email is {{emailLogin}}.</p>
-<div id=‘mainDiv’>
-  <div id=‘formDiv’>
-    <form id=‘demoForm’>
-      <fieldset>
-        <legend>Register here</legend>
-        <table id=‘regDetails’>
-          <tr>
-            <td><label for=‘nameInput’>Name</label></td>
-            <td><input type=‘text’ id=‘nameInput’/></td>
-          </tr>
-          <tr>
-            <td><label for=‘emailInput’>Email</label></td>
-            <td><input type=‘text’ id=‘emailInput’/></td>
-          </tr>
-          <tr>
-            <td><label for=‘passwordInput’>Password</label></td>
-            <td><input type=‘password’ id=‘passwordInput’/></td>
-          </tr>
-          <tr>
-            <td colspan=‘2’><input type=‘submit’ id=‘submitButton’/></td>
-          </tr>
-        </table>
-      </fieldset>
-    </from>
-  </div>
-  <div id=‘detailsBox’></div>
-</div>
+<h1>rate my ta</h1>
+{{#each blogs}}
+<section class="card">
+  <a href="/blogs/{{id}}" class="card-body">
+    <h3 class="card-title">{{title}}</h3> 
+      <h5>posted by {{user.username}} on {{createdAt}}</h5>
+        <p class="card-text">{{content}}</p>
+  </a>
+</section>
+{{/each}}
