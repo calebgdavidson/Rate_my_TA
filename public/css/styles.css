@@ -1,32 +1,26 @@
-body {
-background-color: #282828;
-color: #07f417;
-}
-
-* {
-margin: 0px;
-padding: 0px;
-box-sizing: border-box;
-}
 
 .card-title {
 background-color: transparent;
-color: #07f417;
 padding: 4.5px;
-border: 1px solid #07f417;
+border: 1px solid var(--Borders-Font);
 }
 
 .card {
 background-color: transparent;
-border: 1px solid #07f417;
+border: 1px solid var(--Borders-Font);
 }
 
-.card h5, .card p {
-    color: #07f417;
-}
 
 button {
 padding: 4px;
 margin: 6px;
-border: 1px solid #07f417;
+border: 1px solid var(--Borders-Font);
+}
+
+body,.card-title, .card h5, .card p {
+    color: var(--Borders-Font);
+}
+
+label{
+    font-size: 18px;
 }
