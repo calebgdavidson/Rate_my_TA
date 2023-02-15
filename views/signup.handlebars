@@ -1,25 +1,26 @@
-<section class="card text-center">
+    <section class="card text-center">
 
-    <div class="card-body">
+        <div class="card-body">
 
-        <div class="card-title">
-            <h3 id="title">sign up</h3>
+            <div class="card-title">
+                <h3 id="title">{{formTitle.title}}</h3>
+            </div>
+
+            <form id="signup">
+                <div class="card-text">
+                    <label for="signupUsername">username</label><br>
+                    <input type="text" placeholder="insert username" id="signupUsername">
+                </div>
+                <div class="card-text">
+                    <label for="signupPassword">password</label><br>
+                    <input type="text" placeholder="insert password" id="signupPassword">
+                </div>
+                <div class="form-btn card-body">
+                    <button>signup</button><br>
+                <a href="/login">login</a>
+                </div>
+            </form>
         </div>
-
-        <form id="signup">
-            <div class="card-text">
-                <label for="signupUsername">username</label><br>
-                <input type="text" placeholder="insert username" id="signupUsername">
-            </div>
-            <div class="card-text">
-                <label for="signupPassword">password</label><br>
-                <input type="text" placeholder="insert password" id="signupPassword">
-            </div>
-            <div class="form-btn card-body">
-                <button>sign up</button><br>
-            <a href="/login">login</a>
-            </div>
-        </form>
-    </div>
-</section>
+    </section>
+    
 <script src="/js/signup.js"></script>

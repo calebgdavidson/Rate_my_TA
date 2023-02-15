@@ -1,24 +1,25 @@
-<section class="card text-center">
+    <section class="card text-center">
 
-    <div class="card-body">
-        <div class="card-title">
-            <h3 class="">login</h3>
+        <div class="card-body">
+            <div class="card-title">
+                <h3 class="">{{formTitle.title}}</h3>
+            </div>
+
+            <form id="login">
+                <div class="card-text">
+                    <label for="loginUsername">username</label><br>
+                    <input type="text" placeholder="insert username" id="loginUsername">
+                </div>
+                <div class="card-text">
+                    <label for="loginPassword">password</label><br>
+                    <input type="text" placeholder="insert password" id="loginPassword">
+                </div>
+                <div class="form-btn card-body">
+                    <button>login</button><br>
+                    <a href="/signup">signup</a>
+                </div>
+            </form>
         </div>
-
-        <form id="login">
-            <div class="card-text">
-                <label for="loginUsername">username</label><br>
-                <input type="text" placeholder="insert username" id="loginUsername">
-            </div>
-            <div class="card-text">
-                <label for="loginPassword">password</label><br>
-                <input type="text" placeholder="insert password" id="loginPassword">
-            </div>
-            <div class="form-btn card-body">
-                <button>login</button><br>
-                <a href="/signup">signup</a>
-            </div>
-        </form>
-    </div>
-</section>
+    </section>
+    
 <script src="/js/login.js"></script>

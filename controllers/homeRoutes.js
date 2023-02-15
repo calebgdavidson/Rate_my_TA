@@ -38,7 +38,12 @@ router.get('/', async (req, res) => {
 
     // console.log('GET',posts);
 
+    let formTitle = {
+      title: 'Rate My TA'
+    }
+
     res.render('homepage', {
+      formTitle,
       // posts,
       logged_In: req.session.loggedIn,
     });
@@ -63,6 +68,11 @@ router.get('/signup', (req, res) => {
   res.render('signup',{ formTitle });
 });
 
-
+router.get('/dashboard', (req, res) => {
+  let formTitle = {
+    title: 'Dashboard'
+  }
+  res.render('dash',{ formTitle });
+});
 
 module.exports = router;
