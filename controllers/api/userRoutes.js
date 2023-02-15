@@ -1,19 +1,19 @@
 const router = require('express').Router();
-// require user model
+const { User } = require('../../models')
 const { withAuth, hasAuth } = require('../../utils/auth');
 
 // CREATE new user
 router.post('/', async (req, res) => {
     try {
+      console.log(req.body);
       const dbUserData = await User.create({
-        name: req.body.username,
-        email: req.body.email,
+        name: req.body.userName,
         password: req.body.password,
       });
       // Pass back session true for redirect in signup.js
+      console.log(' b4save')
       req.session.save(() => {
         req.session.loggedIn = true;
-  
         res.status(200).json(dbUserData);
       });
     } catch (err) {
