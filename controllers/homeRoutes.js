@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// require model
+const { Post, User, Ta } = require('../models')
 const { withAuth, hasAuth } = require('../utils/auth');
 
 
@@ -8,45 +8,41 @@ router.get('/', async (req, res) => {
     console.log('HELLO');
   try {
 
-    // const postData = await Post.findAll({
-    //   attributes: [
-    //     'id',
-    //     'title',
-    //     'post_text',
-    //     'post_date',
-    //     'poster_id'
-    //   ],
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name']
-    //     },
-    //     {
-    //       model: Comment,
-    //       attributes: ['id', 'post_id', 'comment_text', 'commenter_id', 'comment_date'],
-    //       include: [
-    //         {
-    //           model: User,
-    //           attributes: ['name']
-    //         }
-    //       ]
-    //     }
-    //   ]
-    // });
+    const postData = await Post.findAll({
+      attributes: [
+        'id',
+        'ta_id',
+        'post_text',
+        'post_date',
+        'user_id'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'id']
+        },
+        {
+          model: Ta,
+          attributes: ['id', 'ta_name', 'rate', 'post_id'],
+        }
+      ]
+    });
 
-    // const posts = postData.map((project) => project.get({ plain: true }));
-
-    // console.log('GET',posts);
+    const posts = postData.map((project) => project.get({ plain: true }));
 
     let formTitle = {
       title: 'Rate My TA'
     }
 
+    console.log(posts);
+
     res.render('homepage', {
       formTitle,
-      // posts,
+      posts,
       logged_In: req.session.loggedIn,
     });
+    // Insomnia test
+    // res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
