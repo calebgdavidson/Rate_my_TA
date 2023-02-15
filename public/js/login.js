@@ -3,8 +3,8 @@ async function handleLoginForm(event) {
     const userName = document.querySelector('#loginUsername').value.trim();
     const password = document.querySelector('#loginPassword').value.trim();
     if (userName && password) {
-      const response = await fetch('/api/users', {
-        method: 'post',
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
         body: JSON.stringify({
           userName,
           password
