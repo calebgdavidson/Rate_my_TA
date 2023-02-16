@@ -1,3 +1,6 @@
+.nav-head{
+    display: flex;
+}
 
 .card-title {
 background-color: transparent;
@@ -8,6 +11,7 @@ border: 1px solid var(--Borders-Font);
 .card {
 background-color: transparent;
 border: 1px solid var(--Borders-Font);
+margin-bottom: 20px;
 }
 
 
@@ -17,7 +21,7 @@ margin: 6px;
 border: 1px solid var(--Borders-Font);
 }
 
-body,.card-title, .card h5, .card p {
+body, .all-TAs, .card-title, .card h5, .card p {
     color: var(--Borders-Font);
 }
 
