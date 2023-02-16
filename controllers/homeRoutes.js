@@ -65,10 +65,22 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-  let formTitle = {
-    title: 'Dashboard'
+  try {
+
+    // const whatever = Post.findOne or Post.findByPk
+
+    let formTitle = {
+      title: 'Dashboard'
+    }
+    res.render('dash',{
+      formTitle,
+      logged_In: req.session.loggedIn
+    });
+    // Insomnia test
+    // res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.render('dash',{ formTitle });
 });
 
 module.exports = router;
