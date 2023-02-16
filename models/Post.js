@@ -11,8 +11,8 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
+        ta_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         post_text: {
@@ -24,7 +24,7 @@ Post.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        poster_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {

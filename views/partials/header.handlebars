@@ -1,3 +1,17 @@
-<header class="display-flex justify-space-between align-center p-2">
-  <h1>User {{formTitle.title}}</h1>
+<header class="">
+  <div class="home-title">
+    <h1>User {{formTitle.title}}</h1>
+  </div>
+  
+  <nav class="nav-head">
+
+    <a href="/" class="nav-link">Home</a>
+
+    <a href="/dashboard" class="nav-link">Dashboard</a>
+
+    {{#if logged_In}}
+    <a id="logout" href="/logout" class="nav-link">Logout</a>
+    {{else}}<a href= "/login" class="nav-link">Login</a>{{/if}}
+
+  </nav>
 </header>
