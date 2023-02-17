@@ -1,10 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const { Post, User, Ta } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
-    console.log('HELLO');
+router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
           'id',
@@ -31,7 +29,7 @@ router.get('/', withAuth, (req, res) => {
 
 });
 
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -68,7 +66,7 @@ router.get('/:id', withAuth, (req, res) => {
 
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Post.create({
         ta_id: req.body.ta_id,
         post_text: req.body.post_text,
@@ -87,7 +85,7 @@ router.post('/', withAuth, (req, res) => {
 
 // });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

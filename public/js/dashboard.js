@@ -21,8 +21,8 @@ function handleNewPost(event) {
 
 async function handleNewRate(event) {
     event.preventDefault();
-    const title = document.querySelector('#title');
-    const content = document.querySelector('#content');
+    const title = document.querySelector('#title').value.trim();
+    const content = document.querySelector('#content').value.trim();
 
     if (!title || !content) {
         alert('Please fill out all fields');
@@ -39,8 +39,7 @@ async function handleNewRate(event) {
         headers: { 'Content-Type': 'application/json' },
     });
     if (res.ok) {
-        createNewPost.setAttribute("hidden", "false");
-        location.reload();
+        document.location.replace('/dashboard');
     } else {
         alert("Failed to create new post");
     }
