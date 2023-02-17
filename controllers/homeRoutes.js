@@ -5,7 +5,6 @@ const { withAuth, hasAuth } = require('../utils/auth');
 
 // 
 router.get('/', async (req, res) => {
-    console.log('HELLO');
   try {
 
     const postData = await Post.findAll({
